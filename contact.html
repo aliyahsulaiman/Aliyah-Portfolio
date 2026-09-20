@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+    <title>Contact | Aliyah Sulaiman</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #08070d;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            top: -180px;
+            left: -150px;
+
+            background: rgba(168, 85, 247, 0.15);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            right: -150px;
+            bottom: -150px;
+
+            background: rgba(192, 132, 252, 0.12);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            z-index: -1;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            padding: 25px 8%;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+        .nav_content {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo a {
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 1.6rem;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+        }
+
+        .logo a::after {
+            content: ".";
+
+            color: #a855f7;
+        }
+
+        nav ul {
+            display: flex;
+
+            gap: 35px;
+
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #aaa6b5;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #c084fc;
+        }
+
+        .checkbox {
+            display: none;
+
+            font-size: 1.7rem;
+
+            color: #c084fc;
+
+            cursor: pointer;
+        }
+
+        #check {
+            display: none;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 70px 25px 80px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .contact-header {
+            margin-bottom: 50px;
+
+            max-width: 700px;
+        }
+
+        .small-title {
+            color: #c084fc;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 15px;
+        }
+
+        .small-title::before {
+            content: "";
+
+            width: 30px;
+
+            height: 1px;
+
+            background: #a855f7;
+        }
+
+        .contact-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 18px;
+        }
+
+        .contact-header h1 span {
+            color: #a855f7;
+        }
+
+        .contact-header p {
+            color: #aaa6b5;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           CONTACT GRID
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 0.85fr 1.15fr;
+
+            gap: 25px;
+
+            align-items: stretch;
+        }
+
+
+        /* =========================
+           CONTACT INFO CARD
+        ========================= */
+
+        .contact-info {
+
+            background: rgba(255, 255, 255, 0.035);
+
+            border: 1px solid #292630;
+
+            border-radius: 18px;
+
+            padding: 30px;
+        }
+
+        .contact-info h2 {
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-info h2 span {
+            color: #a855f7;
+        }
+
+        .contact-info > p {
+            color: #85808e;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           CONTACT ITEMS
+        ========================= */
+
+        .contact-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 15px;
+
+            margin-bottom: 12px;
+
+            background: rgba(255, 255, 255, 0.025);
+
+            border: 1px solid #292630;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+
+            border-color:
+                rgba(168, 85, 247, 0.4);
+
+            transform: translateX(3px);
+        }
+
+        .contact-item i {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 8px;
+
+            background:
+                rgba(168, 85, 247, 0.08);
+
+            color: #c084fc;
+
+            font-size: 18px;
+        }
+
+        .contact-item small {
+
+            display: block;
+
+            color: #66616f;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 4px;
+        }
+
+        .contact-item a {
+
+            color: #ddd8e5;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            word-break: break-word;
+
+            transition: 0.3s;
+        }
+
+        .contact-item a:hover {
+
+            color: #c084fc;
+        }
+
+
+        /* =========================
+           SOCIALS
+        ========================= */
+
+        .social-title {
+
+            margin-top: 30px;
+
+            margin-bottom: 12px;
+
+            font-size: 12px;
+
+            color: #aaa6b5;
+        }
+
+        .social-links {
+
+            display: flex;
+
+            gap: 9px;
+        }
+
+        .social-links a {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 8px;
+
+            border: 1px solid #292630;
+
+            color: #aaa6b5;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+
+            color: #c084fc;
+
+            border-color: #a855f7;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FORM CARD
+        ========================= */
+
+        .contact-form-card {
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            border: 1px solid #292630;
+
+            border-radius: 18px;
+
+            padding: 30px;
+        }
+
+        .contact-form-card h2 {
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-form-card h2 span {
+
+            color: #a855f7;
+        }
+
+        .form-subtitle {
+
+            color: #77727f;
+
+            font-size: 12px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .contact-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .input-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+        .input-group label {
+
+            color: #aaa6b5;
+
+            font-size: 11px;
+
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            border: 1px solid #302c37;
+
+            border-radius: 8px;
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 12px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .contact-form input {
+
+            height: 45px;
+        }
+
+        .contact-form textarea {
+
+            resize: vertical;
+
+            min-height: 130px;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+
+            color: #55515d;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+
+            border-color: #a855f7;
+
+            box-shadow:
+                0 0 0 3px rgba(168, 85, 247, 0.08);
+        }
+
+
+        /* =========================
+           SEND BUTTON
+        ========================= */
+
+        .send-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #9333ea,
+                    #a855f7
+                );
+
+            color: #fff;
+
+            font-family: inherit;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 10px 25px
+                rgba(168, 85, 247, 0.18);
+        }
+
+        .send-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(168, 85, 247, 0.3);
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-container {
+
+            text-align: center;
+
+            padding: 10px 20px 60px;
+        }
+
+        .back-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 11px 18px;
+
+            border: 1px solid #34313c;
+
+            border-radius: 8px;
+
+            color: #aaa6b5;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+
+            color: #c084fc;
+
+            border-color: #a855f7;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+
+                padding: 20px 6%;
+            }
+
+            .checkbox {
+
+                display: block;
+            }
+
+            nav ul {
+
+                position: absolute;
+
+                top: 70px;
+
+                left: -100%;
+
+                width: 100%;
+
+                background:
+                    rgba(8, 7, 13, 0.98);
+
+                flex-direction: column;
+
+                align-items: center;
+
+                padding: 30px;
+
+                gap: 25px;
+
+                transition: 0.4s;
+            }
+
+            #check:checked ~ ul {
+
+                left: 0;
+            }
+
+            .contact {
+
+                padding:
+                    55px 18px 50px;
+            }
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .contact-header h1 {
+
+                font-size: 2.5rem;
+            }
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info,
+            .contact-form-card {
+
+                padding: 22px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="nav_content">
+
+            <div class="logo">
+
+                <a href="portfolio.html">
+                    Leeyah
+                </a>
+
+            </div>
+
+
+            <label for="check" class="checkbox">
+
+                <i class="ri-menu-line"></i>
+
+            </label>
+
+            <input type="checkbox" id="check">
+
+
+            <ul>
+
+                <li>
+                    <a href="portfolio.html">
+                        HOME
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        PROFILE
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        PROJECTS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="active">
+                        CONTACT
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <main class="contact">
+
+
+        <!-- HEADER -->
+
+        <div class="contact-header">
+
+            <div class="small-title">
+                Get In Touch
+            </div>
+
+            <h1>
+                Let's build something
+                <span>great.</span>
+            </h1>
+
+            <p>
+                Have a project idea, internship opportunity, collaboration,
+                or simply want to connect? I'd be happy to hear from you.
+                Feel free to reach out through any of the channels below.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             CONTACT GRID
+        ========================= -->
+
+        <div class="contact-grid">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <h2>
+                    Let's <span>connect.</span>
+                </h2>
+
+                <p>
+                    Whether you're interested in working together,
+                    discussing a project, or just saying hello,
+                    you can reach me through the options below.
+                </p>
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-item">
+
+                    <i class="ri-mail-line"></i>
+
+                    <div>
+
+                        <small>
+                            Email
+                        </small>
+
+                        <a href="mailto:leeyahcyberedgesolution@gmail.com">
+                            leeyahcyberedgesolution@gmail.com
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="contact-item">
+
+                    <i class="ri-phone-line"></i>
+
+                    <div>
+
+                        <small>
+                            Phone
+                        </small>
+
+                        <a href="tel:+2347071288125">
+                            +234 707 128 8125
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-item">
+
+                    <i class="ri-whatsapp-line"></i>
+
+                    <div>
+
+                        <small>
+                            WhatsApp
+                        </small>
+
+                        <a
+                            href="https://wa.me/2347071288125"
+                            target="_blank">
+
+                            Chat with me on WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOCIAL -->
+
+                <div class="social-title">
+                    Find me online
+                </div>
+
+                <div class="social-links">
+
+                    <a
+                        href="https://linkedin.com/in/aliyah-sulaiman-40451432a"
+                        target="_blank"
+                        aria-label="LinkedIn">
+
+                        <i class="ri-linkedin-fill"></i>
+
+                    </a>
+
+
+                    <a
+                        href="https://github.com/aliyahsulaiman"
+                        target="_blank"
+                        aria-label="GitHub">
+
+                        <i class="ri-github-fill"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form-card">
+
+                <h2>
+                    Send me a <span>message.</span>
+                </h2>
+
+                <p class="form-subtitle">
+                    I'll get back to you as soon as possible.
+                </p>
+
+
+                <form
+                    class="contact-form"
+                    action="mailto:sulaimanaliyah23@gmail.com"
+                    method="post"
+                    enctype="text/plain">
+
+
+                    <div class="form-row">
+
+                        <div class="input-group">
+
+                            <label>
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            name="subject"
+                            placeholder="What is this about?"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Message
+                        </label>
+
+                        <textarea
+                            name="message"
+                            placeholder="Tell me about your project or opportunity..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="send-btn">
+
+                        Send Message
+
+                        <i class="ri-send-plane-line"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- BACK -->
+
+    <div class="back-container">
+
+        <a
+            href="portfolio.html"
+            class="back-btn">
+
+            <i class="ri-arrow-left-line"></i>
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+
+</body>
+</html>

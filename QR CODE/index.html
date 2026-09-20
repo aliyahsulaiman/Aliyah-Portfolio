@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="qr code.css">
+    <style>
+        .btn2{
+display: inline-block;
+padding: 10px 16px;
+background:white;
+color:black;
+text-decoration: none;
+border-radius: 8px;
+font-size: 14px;
+transition: 0.3s;
+ border: 2px solid black;
+}
+
+.btn2:hover{
+background:#555;
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <form id="qr-form">
+            <input type="text" id="url-input" placeholder="Enter URL" required>
+            <button type="submit">Generate QR Code</button>
+        </form>
+        <div id="qr-code"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script src="qr code.js"></script>
+    <a href="C:\Users\USER\Desktop\MY PROJECT\tribute.html" class="btn2">
+      Back
+        </a>
+</body>
+</html>

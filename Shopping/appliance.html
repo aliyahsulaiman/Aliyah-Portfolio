@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {box-sizing:border-box}
+        body{
+          background-color: #f2f2f2;
+        }
+
+/* Slideshow container */
+.slideshow-container {
+  width: 70%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: white;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.box{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  text-decoration: none;
+        font-size: 1.5rem;
+        padding: 13px 35px;
+        box-sizing: border-box;
+        font-weight: 700;
+        width: 50%;
+        font-family: 'Gill Sans';
+       box-shadow:  0 0 5px rgba(0, 0, 0, .2); 
+}
+
+
+#button{
+                background-color:magenta;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                color: white;
+                border: 2px solid magenta;
+                border-radius: 5px;
+                float: right;
+            }
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+form{
+    display: flex;
+
+    margin-bottom: 60px;  
+}
+#search-input{
+    width: 500px;
+    height: 80%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    border-radius: 5px;
+    font-size: 18px;
+    color: #333;
+}
+.gallery{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.gallery::after{
+  content: "";
+  width: 350px;
+}
+    </style>
+</head>
+<body>
+    <section>
+        <!-- Slideshow container -->
+    <div class="slideshow-container">
+    
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="1000003106.jpg" style="width:100%">
+          <div class="text"></div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="1000003108.jpg" style="width:100%">
+          <div class="text"></div>
+        </div>
+      
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      </section>
+      <h1 style="color: black; font-size: 2 rem; font-weight: 900;"> HOME APPLIANCE</h1>
+      <h2 style="float: right;">Price:N30,000</h2>
+      <div class="box">
+        Send Seller A message
+        <br>
+        <br>
+        <p></p>
+        <form>
+          <input type="text" id="search-input" placeholder="Good day is these stil available "/>
+       </form>
+       
+      </div>
+      <a href="payment form.html">  <div id="button">
+        PAY
+      </div></a>
+    
+        <h2> Seller Information <span style="padding: 12px 10px;"> Seller Details</span></h2>
+
+
+
+          <div>
+          <img src="1000003112.jpg" style="border-radius: 50%;"
+           width="50px"> <span> Group(2) Fantasia</span><span style="background-color:white; border-radius: 6px; padding: 16px 32px; color:royalblue;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 16px;
+           margin: 3px 2px;"> follow</span></div>
+
+           <hr>
+           <h2> DETAILS</h2>
+           <P>BRAND <span style="float: right;">YEN CHI</span></P>
+           <P>SIZE<span style="float: right;"></span></P>
+           <hr>
+           <h2> DESCRIPTION</h2>
+           <P>COLOR <span style="float: right;">MULTI-COLOR</span></P>
+           <P> MATERIAL<span style="float: right;">PLASTIC</span></P>
+           <hr>
+<br>
+           <h1> Product Related Item</h1>
+           <div class="gallery">
+           <img src="1000003108.jpg"  >
+           <img src="1000003106.jpg" >
+           <img src="1000004752.jpg" >
+           <img src="1000003112.jpg" >
+          
+</div>
+<a href="shop more.html"><div id="button">Back</div></a>
+
+
+      <script>
+        let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+      </script>  
+</body>
+</html>

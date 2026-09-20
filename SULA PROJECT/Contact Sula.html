@@ -1,0 +1,154 @@
+<!Doctype html>
+<html>
+<head>
+	<title> Contact</title>
+<style>
+.coloumn{
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+
+/*clear float after the columns*/
+.row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* responvive layout*/
+@media screen and (max-width:600px){
+  .coloumn{
+    width: 100%;
+  }
+}
+ 
+*{
+	box-sizing:border-box;
+}
+input[type=text], select, textarea{
+	width:100%;
+	padding:12px;
+	border:1px solid aqua;
+	border-radius:4px;
+	resize:vertical;
+}
+
+label{
+	paddind: 12px 12px 12px 0;
+	display: inline-block;
+}
+input[type=submit]{
+	background-color:yellow;
+	color:white;
+	padding:12px 20px;
+	border:none;
+	border-radius: 4px;
+	cursor:pointer;
+	float: right;
+}
+input[type=submit]:hover{
+	background-color:pink;
+	}
+	.container{
+	border-radius: 20px;
+	background-color: #f2f2f2;
+	padding: 50px;
+	}
+	.col-25{
+	float: left;
+	width:25%;
+	margin-top: 6px;
+	}
+
+	.col-75{
+		float: left;
+		width: 75%;
+		margin-top: 6px;
+	}
+	/* clear floats after the columns*/
+	.row::after{
+	content:"";
+	display: table;
+	clear:both;
+	}
+	/* Responsive layout- when the screen is less than 600px wide, make the teo coloumns stac*/
+	@media screen and (max-width:600px){
+	.col-25, .col-75, input[type=submit]{
+	width:100%;
+	margin-top: 0;
+	}
+
+.btn2{
+display: inline-block;
+padding: 10px 16px;
+background:white;
+color:black;
+text-decoration: none;
+border-radius: 8px;
+font-size: 14px;
+transition: 0.3s;
+ border: 2px solid black;
+}
+
+.btn2:hover{
+background:#555;
+}
+</style>
+</head>
+<body>
+	<h1>Address</h1>
+    <p>9/11,Sulaiman Omisanya Street, A wobo Estate,Igbogbo<br>Ganiyu Adesanya Creasent,Off Lateef Oyenubi Street,Awobo Estate,Igbogbo</p>
+      <p>  <b>Telephone:</b>+234 8124 015 571,+234 7064 812 130, +234 8020 744 146,+234 8028 796 363</p>
+<div clas-="columns">
+  		<div class="container">
+		<form action="/action_page.php">
+			<div class="row">
+				<div class="col-25">
+					<label for="fname"> First Name</label>
+				</div>
+	<div class="col-75">
+					<input type="text"id="fname" name="First Name" placeholder="Your Name....">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="gmail"> Your Email</label>
+				</div>
+	<div class="col-75">
+					<input type="text"id="gmail" name="gmail" placeholder="G-mail">
+				</div>
+			</div>
+			<div class="row">
+						<div class="col-25">
+							<label for="country"> Country</label>
+						</div>
+					<div class="col-75">	
+				<select id="country" name="country">
+					<option value="australlia"> Australia</option>
+					<option value="Nigeria"> Nigeria</option>
+				<option value="canada"> Canada</option>
+				<option value="india"> India</option>
+				<option value="sudan"> Sudan</option>
+				</select>
+			</div>
+<div class="row">
+	<div class="col-25">
+		<label for="Message" >Message</label>
+	</div>
+	<div class="col-75">
+		<textarea id="Message" name="Message" placeholder="Write Something.." style="height: 200px;"></textarea>
+	</div>
+</div>
+<br>
+<div class="row">
+<input type="submit" value="submit">
+</div>
+</form>
+</div>
+<br>
+<a href="SULA BREAD.html" class="btn2">
+	Back to home
+	  </a>  
+</body>

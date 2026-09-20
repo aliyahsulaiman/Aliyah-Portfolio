@@ -1,0 +1,98 @@
+<head>
+    <link rel="stylesheet" href="le.css">
+    <title>PROJECT</title>
+    <style>
+      .btn3{
+display: inline-block;
+padding: 10px 16px;
+background:white;
+color:black;
+text-decoration: none;
+border-radius: 8px;
+font-size: 14px;
+transition: 0.3s;
+border: 2px solid black;
+}
+
+.btn3:hover{
+background:#555;
+}
+</style>
+</head>
+<body>
+           <body onload="slider()">
+            <nav class="navbar">
+              <div class="logo">
+                <a href="#">WALLPAPER</a>
+              </div>
+           <div class="menu">
+             <ul>
+                  <li><a href="">HOME<span></span></a></li>
+                <li><a href="gallery.html">GALLERY<span></span></a></li>
+                <li><a href="#">ABOUT<span></span></a></li>
+                <li><a href="#">RELATED CONTENT<span></span></a></li>  
+                </ul>
+                </div>
+            <button class="log-in"><a href="form.html">Log-in</a></button>
+            </nav>
+            
+            <div class="banner">
+              <div class="slider">
+                <img src="hello/a.jpg" id="slideImg">
+              </div>
+              <div class="overlay">
+                <div class="content">
+                  <h1>WELCOME TO WALLPAPER ZONE</h1>
+                  <h2> Suscribe to get latest wallpaper update </h2>
+                  <div>
+                    <button type="button">
+                     More content
+                    </button>
+                    <button type="button" class="btn-2">
+                    Suscribe
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script>
+              var slideImg = document.getElementById("slideImg");
+
+              var images =new Array(
+                "hello/a.jpg",
+               "hello/b.jpg",
+               "hello/c.jpg",
+               "hello/d.jpg",
+               "hello/e.jpg",
+               "hello/f.jpg",
+               "hello/g.png",
+               "hello/h.jpg",
+               
+               
+
+
+              );
+              var len =images.length;
+              var i = 0;
+
+              function slider(){
+                if(i > len-1){
+                  i = 0;
+                }
+                slideImg.src = images[i];
+                i++;
+                setTimeout('slider()',3000);
+              }
+            </script>
+<br>
+<a href="C:\Users\USER\Desktop\MY PROJECT\tribute.html" class="btn2">
+  Back
+    </a>
+            </body>
+
+
+          
+            
+           
+               
+        

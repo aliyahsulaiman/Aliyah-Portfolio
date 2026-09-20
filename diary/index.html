@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Little Diary 🌷</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==============================
+     ✨ LOADING SCREEN
+============================== -->
+
+<div class="loading-screen" id="loading-screen">
+
+    <div class="loading-content">
+
+        <div class="loading-flower">
+            🌷
+        </div>
+
+        <h1>My Little Diary</h1>
+
+        <p>
+            A tiny space for your little moments ✨
+        </p>
+
+        <div class="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==============================
+     🔐 FIRST-TIME PIN SETUP
+============================== -->
+
+<div
+    id="pin-setup"
+    class="pin-setup"
+>
+
+    <div class="pin-setup-card">
+
+        <div class="pin-setup-icon">
+            🔐
+        </div>
+
+        <h2>
+            Welcome to BloomVault 🌷
+        </h2>
+
+        <p>
+            Create a personal PIN to keep
+            your little diary private.
+        </p>
+
+        <input
+            type="password"
+            id="new-pin"
+            placeholder="Create a PIN"
+            inputmode="numeric"
+            maxlength="6"
+        >
+
+        <input
+            type="password"
+            id="confirm-pin"
+            placeholder="Confirm your PIN"
+            inputmode="numeric"
+            maxlength="6"
+        >
+
+        <p
+            id="pin-setup-error"
+            class="pin-setup-error"
+        ></p>
+
+        <button
+            id="create-pin-btn"
+        >
+            🔐 Create my PIN
+        </button>
+
+    </div>
+
+</div>
+
+    <main class="diary-container">
+        
+        <div class="sparkle sparkle-one">✦</div>
+        <div class="sparkle sparkle-two">✧</div>
+        <div class="sparkle sparkle-three">✦</div>
+
+        <section class="welcome-card">
+
+            <div class="diary-icon">📖</div>
+
+            <p class="small-text">A little space for you</p>
+
+            <h1>My Little Diary</h1>
+
+            <p class="welcome-text">
+                Welcome back, little dreamer 🌷
+            </p>
+
+            <div class="lock-area">
+
+                <label for="pin">Enter your secret PIN</label>
+
+                <input
+                    type="password"
+                    id="pin"
+                    maxlength="4"
+                    placeholder="••••"
+                >
+
+                <button id="unlock-btn">
+                    Unlock My Diary ✨
+                </button>
+
+                <p id="error-message"></p>
+
+            </div>
+
+        </section>
+
+
+    <section class="diary-dashboard" id="diary-dashboard">
+
+        <div class="dashboard-header">
+            <div>
+                <p class="small-text">Welcome back ✨</p>
+                <h2>My Little Diary</h2>
+            </div>
+
+            <button
+            class="sound-toggle"
+            id="sound-toggle"
+            title="Turn cozy sounds on"
+        >
+            🔇
+        </button>
+            <button class="lock-btn" id="lock-btn">
+                🔒
+            </button>
+        <button class="theme-toggle" id="theme-toggle" title="Change theme">
+            🌙
+        </button>
+
+        <button
+    class="theme-picker-btn"
+    id="theme-picker-btn"
+    title="Customize diary"
+>
+    🎀
+</button>
+</div>
+
+<div class="theme-panel" id="theme-panel">
+
+    <div class="theme-panel-header">
+
+        <div>
+            <p class="small-text">Make it yours ✨</p>
+            <h3>Choose a Theme</h3>
+        </div>
+
+        <button
+            class="close-theme"
+            id="close-theme"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="theme-options">
+
+        <button
+            class="theme-option"
+            data-theme="blossom"
+        >
+            <span class="theme-preview blossom-preview">
+                🌸
+            </span>
+
+            <span>Blossom</span>
+        </button>
+
+
+        <button
+            class="theme-option"
+            data-theme="midnight"
+        >
+            <span class="theme-preview midnight-preview">
+                🌙
+            </span>
+
+            <span>Midnight</span>
+        </button>
+
+
+        <button
+            class="theme-option"
+            data-theme="matcha"
+        >
+            <span class="theme-preview matcha-preview">
+                🍵
+            </span>
+
+            <span>Matcha</span>
+        </button>
+
+
+        <button
+            class="theme-option"
+            data-theme="teddy"
+        >
+            <span class="theme-preview teddy-preview">
+                🧸
+            </span>
+
+            <span>Teddy</span>
+        </button>
+
+
+        <button
+            class="theme-option"
+            data-theme="berry"
+        >
+            <span class="theme-preview berry-preview">
+                🫐
+            </span>
+
+            <span>Berry</span>
+        </button>
+
+    </div>
+
+</div>
+        <div class="date-card">
+            <span>🌷</span>
+    
+            <div>
+                <p>Today</p>
+                <h3 id="today-date"></h3>
+            </div>
+        </div>
+
+        <div class="daily-quote-card">
+
+            <span class="quote-flower">🌷</span>
+        
+            <div>
+                <p class="quote-label">A little thought for today</p>
+        
+                <p id="daily-quote"></p>
+            </div>
+        
+        </div>
+
+        <div class="mood-history-card">
+
+            <div class="mood-history-header">
+                <div>
+                    <p class="small-text">Your little feelings</p>
+                    <h3>🌷 Mood Garden</h3>
+                </div>
+        
+                <span>♡</span>
+            </div>
+        
+            <div id="mood-history">
+            </div>
+        
+        </div>
+        
+        <div class="mood-card">
+    
+            <p>How are you feeling today?</p>
+    
+            <div class="moods">
+                <button class="mood">🥰</button>
+                <button class="mood">😊</button>
+                <button class="mood">😌</button>
+                <button class="mood">🥺</button>
+                <button class="mood">😴</button>
+            </div>
+    
+        </div>
+
+<!-- ==============================
+     💌 MEMORY CAPSULE
+============================== -->
+
+<div class="capsule-card">
+
+    <div class="capsule-icon">
+        💌
+    </div>
+
+    <div class="capsule-content">
+
+        <span class="small-text">
+            A little message for future me ✨
+        </span>
+
+        <h3>
+            Memory Capsule
+        </h3>
+
+        <p>
+            Write something today and
+            let your future self discover it later.
+        </p>
+
+        <button
+            id="open-capsule-btn"
+            class="capsule-btn"
+        >
+            💌 Create a capsule
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==============================
+     💌 CAPSULE MODAL
+============================== -->
+
+<div
+    class="capsule-modal"
+    id="capsule-modal"
+>
+
+    <div class="capsule-box">
+
+        <button
+            class="close-capsule"
+            id="close-capsule"
+        >
+            ×
+        </button>
+
+
+        <div class="capsule-heading">
+
+            <span>💌</span>
+
+            <h3>
+                A message for future me
+            </h3>
+
+            <p>
+                What do you want your future self
+                to remember? 🌷
+            </p>
+
+        </div>
+
+
+        <input
+            type="text"
+            id="capsule-title"
+            placeholder="Give your capsule a little title..."
+        >
+
+
+        <textarea
+            id="capsule-message"
+            placeholder="Dear future me..."
+            rows="6"
+        ></textarea>
+
+
+        <label
+            for="capsule-date"
+            class="capsule-date-label"
+        >
+            🔐 Open this capsule on
+        </label>
+
+
+        <input
+            type="date"
+            id="capsule-date"
+        >
+
+
+        <button
+            id="save-capsule"
+            class="capsule-save-btn"
+        >
+            🔐 Seal my capsule
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ==============================
+     🔐 SEALED CAPSULES
+============================== -->
+
+<div class="sealed-capsules-section">
+
+    <div class="section-title">
+
+        <h3>
+            Sealed for Future Me
+        </h3>
+
+        <span>🔐</span>
+
+    </div>
+
+
+    <div id="capsules-container">
+
+        <div class="empty-capsules">
+
+            <span>💌</span>
+
+            <p>
+                Your sealed messages will appear here...
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ==============================
+     📅 MEMORY CALENDAR
+============================== -->
+
+<div class="calendar-card">
+
+    <div class="calendar-header">
+
+        <button
+            class="calendar-nav"
+            id="prev-month"
+        >
+            ‹
+        </button>
+
+        <div>
+            <p class="small-text">
+                Little moments ✨
+            </p>
+
+            <h3 id="calendar-month">
+                August 2026
+            </h3>
+        </div>
+
+        <button
+            class="calendar-nav"
+            id="next-month"
+        >
+            ›
+        </button>
+
+    </div>
+
+
+    <div class="calendar-weekdays">
+
+        <span>Sun</span>
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+
+    </div>
+
+
+    <div
+        class="calendar-days"
+        id="calendar-days"
+    ></div>
+
+
+    <div class="calendar-legend">
+
+        <span class="memory-dot"></span>
+
+        <span>
+            Day with a little memory 🌷
+        </span>
+
+    </div>
+
+</div>
+        <button class="new-entry-btn" id="new-entry-btn">
+            ✍️ Write a New Entry
+        </button>
+    
+        <div class="entries-section">
+    
+            <div class="section-title">
+                <h3>Little Memories</h3>
+                <span>♡</span>
+            </div>
+    
+            <div id="entries-container">
+    
+                <div class="empty-state">
+                    <span>🌸</span>
+    
+                    <p>
+                        Your little memories will appear here...
+                    </p>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </section>
+    <!-- ==============================
+     NEW ENTRY MODAL
+============================== -->
+
+<div class="entry-modal" id="entry-modal">
+
+    <div class="entry-box">
+
+        <button class="close-entry" id="close-entry">
+            ×
+        </button>
+
+        <div class="entry-heading">
+            <span>🌷</span>
+            <div>
+                <p>A little moment</p>
+                <h2>New Memory</h2>
+            </div>
+        </div>
+
+        <div class="entry-form">
+
+            <label for="entry-title">
+                Give your memory a title ✨
+            </label>
+
+            <input
+                type="text"
+                id="entry-title"
+                placeholder="Today was..."
+                maxlength="50"
+            >
+
+
+            <label for="entry-text">
+                What's on your mind? 💌
+            </label>
+
+            <textarea
+                id="entry-text"
+                placeholder="Dear diary..."
+                rows="7"
+            ></textarea>
+
+
+            <label>
+                How are you feeling?
+            </label>
+
+            <div class="entry-moods">
+
+                <button class="entry-mood" data-mood="🥰">
+                    🥰
+                </button>
+
+                <button class="entry-mood" data-mood="😊">
+                    😊
+                </button>
+
+                <button class="entry-mood" data-mood="😌">
+                    😌
+                </button>
+
+                <button class="entry-mood" data-mood="🥺">
+                    🥺
+                </button>
+
+                <button class="entry-mood" data-mood="😴">
+                    😴
+                </button>
+                
+
+            </div>
+
+
+            <div class="entry-actions">
+
+                <button
+                    class="cancel-entry"
+                    id="cancel-entry"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    class="save-entry"
+                    id="save-entry"
+                >
+                    Save Memory ✨
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==============================
+     FULL MEMORY VIEW
+============================== -->
+
+<div class="memory-modal" id="memory-modal">
+
+    <div class="full-memory">
+
+        <button
+            class="close-memory"
+            id="close-memory"
+        >
+            ×
+        </button>
+
+        <div class="full-memory-flower">
+            🌷
+        </div>
+
+        <p class="full-memory-date" id="full-memory-date"></p>
+
+        <h2 id="full-memory-title"></h2>
+
+        <div class="full-memory-mood" id="full-memory-mood"></div>
+
+        <div class="memory-divider">
+            ✦ ✦ ✦
+        </div>
+
+        <p
+            class="full-memory-text"
+            id="full-memory-text"
+        ></p>
+
+        <button
+            class="back-memory"
+            id="back-memory"
+        >
+            ← Back to Memories
+        </button>
+
+    </div>
+
+</div>
+
+
+    </main>
+
+    <div class="toast" id="toast">
+        <span>💌</span>
+        <p id="toast-message">Memory saved!</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

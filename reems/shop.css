@@ -1,0 +1,58 @@
+.shop-hero{
+    height:45vh;
+    background:linear-gradient(rgba(8,27,75,.75),rgba(8,27,75,.75)),
+    url("../images/hero/shop-banner.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    }
+    
+    .shop-content h1{
+    font-family:"Bebas Neue",sans-serif;
+    font-size:6rem;
+    letter-spacing:3px;
+    }
+    
+    .shop-content span{
+    letter-spacing:4px;
+    color:#8CB8FF;
+    }
+    
+    .shop-content p{
+    margin-top:20px;
+    font-size:1.1rem;
+    }
+    
+    .shop-container{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:50px;
+    padding:80px 8%;
+    background:#f8f9fc;
+    }
+    .filters{
+        background:#fff;
+        padding:30px;
+        border-radius:20px;
+        height:fit-content;
+        box-shadow:0 15px 40px rgba(0,0,0,.05);
+        }
+        
+        .filters h3{
+        margin-bottom:20px;
+        color:#081B4B;
+        }
+        
+        .filter-group{
+        margin-bottom:35px;
+        }
+        
+        .filter-group label{
+        display:block;
+        margin-bottom:15px;
+        cursor:pointer;
+        }

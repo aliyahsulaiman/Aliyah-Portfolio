@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+                   .gallery{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.gallery img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.gallery::after{
+  content: "";
+  width: 350px;
+}
+           ul.breadcrumb {
+        padding: 8px 16px;
+        list-style:none;
+        background-color: cornflowerblue;
+            }
+            ul.breadcrumb li{display: inline;}
+
+            ul.breadcrumb li+li:before{
+                padding: 8px;
+                color: blueviolet;
+                content: "/\00a0";
+            }
+            ul.breadcrub li a{
+                color:chartreuse;
+                text-decoration: none;
+            }
+</style>
+</head>
+<body>
+    <ul class="breadcrumb">
+        <li><a href="#"> All</a></li>
+            <li><a href="#"> Chemistry Lab</a></li>
+                <li><a href="#"> Fashion</a></li>
+                    <li><a href="#">Physics Lab</a></li>
+ <li><a href="index.html">Back</a></li>
+
+                    </ul>
+                    <div class="gallery">
+                    <img src="_UFW8560.jpg">
+                    <img src="_UFW8547.jpg">
+                    <img src="_UFW8532.jpg">
+                    <img src="_UFW8604.jpg">
+                    <img src="_UFW8613.jpg">
+                    <img src="_UFW8629.jpg">
+                    <img src="_UFW8578.jpg">
+                    <img src="_UFW8630.jpg">
+                    <img src="_UFW8628.jpg">
+                    <img src="_UFW8672.jpg">
+                    <img src="_UFW8582.jpg">
+                    <img src="_UFW8678.jpg">
+                    <img src="_UFW8629.jpg">
+                    <img src="_UFW8609.jpg">
+                    <img src="_UFW8590.jpg">
+                    <img src="_UFW8598.jpg">
+                    </div>
+                    
+
+                    
+
+                    
+
+
+                    
+
+
+                    
+
+                    
+
+                    
+                    
+
+
+
+
+</body>
+</html>

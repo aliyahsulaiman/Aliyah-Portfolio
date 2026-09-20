@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+    <title>Profile | Aliyah Sulaiman</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            background: #08070d;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND GLOW
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            top: -180px;
+            left: -150px;
+
+            background: rgba(168, 85, 247, 0.15);
+            filter: blur(120px);
+            border-radius: 50%;
+
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            right: -150px;
+            bottom: -150px;
+
+            background: rgba(192, 132, 252, 0.12);
+            filter: blur(120px);
+            border-radius: 50%;
+
+            z-index: -1;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            padding: 25px 8%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav_content {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo a::after {
+            content: ".";
+            color: #a855f7;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #aaa6b5;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #c084fc;
+        }
+
+        .checkbox {
+            display: none;
+            font-size: 1.7rem;
+            color: #c084fc;
+            cursor: pointer;
+        }
+
+        #check {
+            display: none;
+        }
+
+        /* =========================
+           PROFILE
+        ========================= */
+
+        .profile {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 25px 80px;
+        }
+
+        .profile-header {
+            margin-bottom: 50px;
+        }
+
+        .small-title {
+            color: #c084fc;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 15px;
+        }
+
+        .small-title::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: #a855f7;
+        }
+
+        .profile-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -2px;
+        }
+
+        .profile-header h1 span {
+            color: #a855f7;
+        }
+
+        /* =========================
+           PROFILE GRID
+        ========================= */
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        /* =========================
+           IMAGE CARD
+        ========================= */
+
+        .profile-image-card {
+            position: relative;
+
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid #292630;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 450px;
+
+            overflow: hidden;
+        }
+
+        .profile-image-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(168, 85, 247, 0.3);
+
+            box-shadow:
+                0 0 70px rgba(168, 85, 247, 0.15);
+        }
+
+        .profile-image-card img {
+            position: relative;
+            z-index: 2;
+
+            width: 270px;
+            height: 270px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 3px solid rgba(168, 85, 247, 0.45);
+
+            box-shadow:
+                0 0 45px rgba(168, 85, 247, 0.2);
+        }
+
+        /* STATUS */
+
+        .status {
+            position: absolute;
+            bottom: 25px;
+
+            padding: 9px 14px;
+
+            background: rgba(10, 9, 15, 0.9);
+            border: 1px solid #302b38;
+
+            border-radius: 8px;
+
+            color: #aaa6b5;
+            font-size: 11px;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .status span {
+            display: inline-block;
+
+            width: 7px;
+            height: 7px;
+
+            background: #22c55e;
+            border-radius: 50%;
+
+            margin-right: 7px;
+        }
+
+        /* =========================
+           ABOUT CARD
+        ========================= */
+
+        .profile-text {
+            background: rgba(255, 255, 255, 0.035);
+
+            border: 1px solid #292630;
+
+            border-radius: 20px;
+
+            padding: 35px;
+        }
+
+        .profile-text h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .profile-text h2 span {
+            color: #a855f7;
+        }
+
+        .profile-text > p {
+            color: #aaa6b5;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            padding: 15px;
+
+            background: rgba(255, 255, 255, 0.025);
+
+            border: 1px solid #292630;
+            border-radius: 10px;
+        }
+
+        .info-box small {
+            display: block;
+
+            color: #66616f;
+            font-size: 10px;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            margin-bottom: 5px;
+        }
+
+        .info-box strong {
+            color: #ddd8e5;
+            font-size: 13px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-title {
+            font-size: 15px;
+            margin-bottom: 13px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+
+            list-style: none;
+        }
+
+        .skills li {
+            padding: 8px 12px;
+
+            color: #c9b7d8;
+
+            background: rgba(168, 85, 247, 0.07);
+
+            border: 1px solid rgba(168, 85, 247, 0.2);
+
+            border-radius: 6px;
+
+            font-size: 11px;
+
+            transition: 0.3s;
+        }
+
+        .skills li:hover {
+            color: #fff;
+            border-color: #a855f7;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .profile-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 11px 18px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #9333ea;
+            color: white;
+
+            box-shadow:
+                0 8px 25px rgba(147, 51, 234, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #a855f7;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #34313c;
+            color: #ddd8e5;
+        }
+
+        .btn-secondary:hover {
+            border-color: #a855f7;
+            color: #c084fc;
+        }
+
+        /* =========================
+           FOCUS SECTION
+        ========================= */
+
+        .focus-section {
+            margin-top: 35px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .focus-card {
+            padding: 25px;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            border: 1px solid #292630;
+            border-radius: 16px;
+
+            transition: 0.3s;
+        }
+
+        .focus-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+
+        .focus-card i {
+            font-size: 24px;
+            color: #a855f7;
+
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .focus-card h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .focus-card p {
+            color: #77727f;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                padding: 20px 6%;
+            }
+
+            .checkbox {
+                display: block;
+            }
+
+            nav ul {
+                position: absolute;
+
+                top: 70px;
+                left: -100%;
+
+                width: 100%;
+
+                background: rgba(8, 7, 13, 0.98);
+
+                flex-direction: column;
+                align-items: center;
+
+                padding: 30px;
+
+                gap: 25px;
+
+                transition: 0.4s;
+            }
+
+            #check:checked ~ ul {
+                left: 0;
+            }
+
+            .profile {
+                padding: 50px 18px;
+            }
+
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image-card {
+                min-height: 350px;
+            }
+
+            .profile-text {
+                padding: 25px;
+            }
+
+            .focus-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .profile-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="nav_content">
+
+            <div class="logo">
+                <a href="portfolio.html">Leeyah</a>
+            </div>
+
+            <label for="check" class="checkbox">
+                <i class="ri-menu-line"></i>
+            </label>
+
+            <input type="checkbox" id="check">
+
+            <ul>
+                <li>
+                    <a href="portfolio.html">HOME</a>
+                </li>
+
+                <li>
+                    <a href="profile.html" class="active">PROFILE</a>
+                </li>
+
+                <li>
+                    <a href="projects.html">PROJECTS</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PROFILE -->
+
+    <main class="profile">
+
+        <div class="profile-header">
+
+            <div class="small-title">
+                About Me
+            </div>
+
+            <h1>
+                A little about
+                <span>me.</span>
+            </h1>
+
+        </div>
+
+
+        <div class="profile-container">
+
+
+            <!-- IMAGE -->
+
+            <div class="profile-image-card">
+
+                <img
+                    src="IMG-20250527-WA0505.jpg"
+                    alt="Aliyah Sulaiman">
+
+                <div class="status">
+                    <span></span>
+                    Open to opportunities
+                </div>
+
+            </div>
+
+
+            <!-- TEXT -->
+
+            <div class="profile-text">
+
+                <h2>
+                    Hi, I'm <span>Aliyah</span> 👋
+                </h2>
+
+                <p>
+                    I'm a frontend developer and aspiring Software Engineer
+                    passionate about technology, problem-solving and creating
+                    digital experiences. I enjoy transforming ideas into
+                    responsive, interactive and user-friendly websites.
+
+                    <br><br>
+
+                    I've worked on a variety of projects including
+                    e-commerce platforms, business websites, educational
+                    interfaces and JavaScript applications. Through these
+                    projects, I've been developing my skills in frontend
+                    development while learning how to create cleaner,
+                    more functional and engaging user experiences.
+                </p>
+
+
+                <!-- QUICK INFO -->
+
+                <div class="info-grid">
+
+                    <div class="info-box">
+                        <small>Role</small>
+                        <strong>Frontend Developer</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <small>Career Focus</small>
+                        <strong>Software Engineering</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <small>Experience</small>
+                        <strong>Project-Based</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <small>Currently</small>
+                        <strong>Learning & Building</strong>
+                    </div>
+
+                </div>
+
+
+                <!-- SKILLS -->
+
+                <h3 class="skills-title">
+                    Technical Skills
+                </h3>
+
+                <ul class="skills">
+
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Responsive Design</li>
+                    <li>UI/UX Basics</li>
+                    <li>Git & GitHub</li>
+                    <li>WordPress</li>
+
+                </ul>
+
+
+                <!-- BUTTONS -->
+
+                <div class="profile-buttons">
+
+                    <a
+                        href="tribute.html"
+                        class="btn btn-primary">
+                        View Projects →
+                    </a>
+
+                    <a
+                        href="portfolio.html"
+                        class="btn btn-secondary">
+                        Back Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CURRENT FOCUS -->
+
+        <div class="focus-section">
+
+            <div class="focus-card">
+
+                <i class="ri-code-s-slash-line"></i>
+
+                <h3>Frontend Development</h3>
+
+                <p>
+                    Building responsive interfaces and improving my
+                    JavaScript and React development skills through
+                    practical projects.
+                </p>
+
+            </div>
+
+
+            <div class="focus-card">
+
+                <i class="ri-layout-4-line"></i>
+
+                <h3>UI & User Experience</h3>
+
+                <p>
+                    Learning how to combine clean visual design with
+                    intuitive layouts and better user experiences.
+                </p>
+
+            </div>
+
+
+            <div class="focus-card">
+
+                <i class="ri-cpu-line"></i>
+
+                <h3> Software Engineering</h3>
+
+                <p>
+                    Developing a stronger technical foundation while
+                    preparing to further explore engineering and
+                    technology.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
